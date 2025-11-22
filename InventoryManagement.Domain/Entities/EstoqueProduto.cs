@@ -1,23 +1,19 @@
+using InventoryManagement.Domain.Common;
 using InventoryManagement.Domain.Enums;
 
 namespace InventoryManagement.Domain.Models
 {
-    public class EstoqueProduto
+    public class EstoqueProduto : Entity
     {
-        public int Id { get; set; }
         public Usuario Usuario { get; set; }
         public DateTime DataValidade { get; private set; }
         public int Quantidade { get; private set; }
         public UnidadeMedida UnidadeMedida { get; private set; }
 
-        public EstoqueProduto()
-        {
+        public EstoqueProduto() { }
 
-        }
-
-        public EstoqueProduto(int id, Usuario usuario, DateTime dataValidade, int quantidade, UnidadeMedida unidadeMedida)
+        public EstoqueProduto(Usuario usuario, DateTime dataValidade, int quantidade, UnidadeMedida unidadeMedida)
         {
-            this.Id = id;
             this.Usuario = usuario;
             this.DataValidade = dataValidade;
             this.Quantidade = quantidade;
