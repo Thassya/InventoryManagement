@@ -6,7 +6,7 @@ namespace InventoryManagement.Domain.Models
 {
     public class Receita : Entity
     {
-        private readonly List<ItensReceita> _itensDaReceita;
+        private readonly List<ItemReceita> _itensDaReceita;
         public string Nome { get; private set; }
         public string Instrucoes { get; private set; }
         public int IdCategoria { get; private set; }
@@ -15,7 +15,7 @@ namespace InventoryManagement.Domain.Models
 
         public Receita()
         {
-            _itensDaReceita = new List<ItensReceita>();
+            _itensDaReceita = new List<ItemReceita>();
         }
 
         public Receita(string nome, string instrucoes, int idCategoria, int tempoPreparo, Dificuldade dificuldade)
@@ -32,7 +32,7 @@ namespace InventoryManagement.Domain.Models
             TempoPreparoEmMinutos = tempoPreparo;
             Dificuldade = dificuldade;
 
-            _itensDaReceita = new List<ItensReceita>();
+            _itensDaReceita = new List<ItemReceita>();
         }
 
         public void AdicionarItemNaReceita(ProdutoId produtoId, decimal quantidade, UnidadeMedida unidadeMedida)
@@ -54,7 +54,7 @@ namespace InventoryManagement.Domain.Models
                 return;
             }
 
-            var novoItemReceita = new ItensReceita(produtoId, new Quantidade(quantidade, unidadeMedida), "");
+            var novoItemReceita = new ItemReceita(produtoId, new Quantidade(quantidade, unidadeMedida), "");
             _itensDaReceita.Add(novoItemReceita);
         }
 

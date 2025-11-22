@@ -4,18 +4,18 @@ using InventoryManagement.Domain.ValueObjects;
 
 namespace InventoryManagement.Domain.Models
 {
-    public class ItensReceita : Entity
+    public class ItemReceita : Entity
     {
         public ProdutoId ProdutoId { get; set; }
         public Quantidade Quantidade { get; set; }
         public string Observacao { get; set; }
 
-        public ItensReceita()
+        public ItemReceita()
         {
 
         }
 
-        public ItensReceita(ProdutoId produtoId, Quantidade quantidade, string observacao)
+        public ItemReceita(ProdutoId produtoId, Quantidade quantidade, string observacao)
         {
             ProdutoId = produtoId ?? throw new ArgumentNullException(nameof(produtoId));
             Quantidade = quantidade ?? throw new ArgumentNullException(nameof(quantidade));
