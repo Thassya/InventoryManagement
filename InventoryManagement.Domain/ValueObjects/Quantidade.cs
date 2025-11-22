@@ -19,9 +19,9 @@ namespace InventoryManagement.Domain.ValueObjects
 
         public Quantidade Adicionar(decimal valorASerAdicionado)
         {
-             if (Valor <= 0)
+            if (Valor <= 0)
                 throw new ArgumentException("Quantidade deve ser maior que zero.");
-                ßß
+
             return new Quantidade(Valor + valorASerAdicionado, Unidade);
         }
 

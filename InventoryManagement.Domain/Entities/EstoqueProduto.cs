@@ -7,18 +7,16 @@ namespace InventoryManagement.Domain.Models
     public class EstoqueProduto : Entity
     {
         public ProdutoId ProdutoId { get; set; }
+        public Quantidade Quantidade { get; private set; }
         public DateTime? DataValidade { get; private set; }
-        public int Quantidade { get; private set; }
-        public UnidadeMedida UnidadeMedida { get; private set; }
 
         public EstoqueProduto() { }
 
-        public EstoqueProduto(ProdutoId produtoId, DateTime? dataValidade, int quantidade, UnidadeMedida unidadeMedida)
+        public EstoqueProduto(ProdutoId produtoId, Quantidade quantidade, DateTime? dataValidade)
         {
-            this.ProdutoId = produtoId;
+            ProdutoId = produtoId ?? throw new ArgumentNullException(nameof(produtoId));
+            Quantidade = quantidade ?? throw new ArgumentNullException(nameof(quantidade));
             this.DataValidade = dataValidade;
-            this.Quantidade = quantidade;
-            this.UnidadeMedida = unidadeMedida;
         }
 
         public void MudarDataValidade(DateTime novaDataValidade)
@@ -28,26 +26,15 @@ namespace InventoryManagement.Domain.Models
 
             DataValidade = novaDataValidade;
         }
-        public void AumentarQuantidade(int novaQuantidade)
-        {
-            if (novaQuantidade <= 0)
-                throw new ArgumentOutOfRangeException(nameof(novaQuantidade), "Quantidade deve ser maior que 0 para ser adicionada.");
 
-            this.Quantidade += novaQuantidade;
+        public void AumentarQuantidade(decimal novaQuantidade)
+        {
+            Quantidade = Quantidade.Adicionar(novaQuantidade);
         }
-        public void DiminuirQuantidade(int novaQuantidade)
-        {
-            if (novaQuantidade <= 0)
-                throw new ArgumentOutOfRangeException(nameof(novaQuantidade), "Quantidade deve ser maior que 0.");
 
-            if (Quantidade - novaQuantidade < 0)
-                throw new InvalidOperationException($"Quantidade maior que o estoque disponível. Estoque: {Quantidade}");
-
-            Quantidade -= novaQuantidade;
-        }
-        public void MudarUnidadeMedida(UnidadeMedida novaUnidadeMedida)
+        public void DiminuirQuantidade(decimal novaQuantidade)
         {
-            UnidadeMedida = novaUnidadeMedida;
+            Quantidade = Quantidade.Remover(novaQuantidade);
         }
     }
 }
