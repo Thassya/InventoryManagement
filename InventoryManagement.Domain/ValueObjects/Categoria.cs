@@ -2,11 +2,12 @@ using InventoryManagement.Domain.Common;
 
 namespace InventoryManagement.Domain.ValueObjects
 {
+    /// <summary>
+    /// Objeto de Valor que representa a categoria de um produto (ex: "Hortifruti", "Limpeza").
+    /// </summary>
     public class Categoria : ValueObject
     {
         public string Nome { get; }
-
-        public Categoria() { }
 
         public Categoria(string nome)
         {
