@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Domain", "InventoryManagement.Domain\InventoryManagement.Domain.csproj", "{C76F6B8D-115A-4E87-885F-386D513903DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Runner", "InventoryManagement.Runner\InventoryManagement.Runner.csproj", "{03F7A8AE-4943-470F-987A-BDC750032E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C76F6B8D-115A-4E87-885F-386D513903DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C76F6B8D-115A-4E87-885F-386D513903DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C76F6B8D-115A-4E87-885F-386D513903DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F7A8AE-4943-470F-987A-BDC750032E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F7A8AE-4943-470F-987A-BDC750032E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F7A8AE-4943-470F-987A-BDC750032E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F7A8AE-4943-470F-987A-BDC750032E61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
