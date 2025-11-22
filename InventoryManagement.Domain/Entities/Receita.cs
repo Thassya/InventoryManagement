@@ -7,16 +7,12 @@ namespace InventoryManagement.Domain.Models
     public class Receita : Entity
     {
         private readonly List<ItemReceita> _itensDaReceita;
+        public IReadOnlyCollection<ItemReceita> Itens => _itensDaReceita.AsReadOnly();
         public string Nome { get; private set; }
         public string Instrucoes { get; private set; }
         public int IdCategoria { get; private set; }
         public int TempoPreparoEmMinutos { get; private set; }
         public Dificuldade Dificuldade { get; private set; }
-
-        public Receita()
-        {
-            _itensDaReceita = new List<ItemReceita>();
-        }
 
         public Receita(string nome, string instrucoes, int idCategoria, int tempoPreparo, Dificuldade dificuldade)
         {

@@ -9,12 +9,7 @@ namespace InventoryManagement.Domain.Models
         public ProdutoId ProdutoId { get; set; }
         public Quantidade Quantidade { get; set; }
         public string Observacao { get; set; }
-
-        public ItemReceita()
-        {
-
-        }
-
+        
         public ItemReceita(ProdutoId produtoId, Quantidade quantidade, string observacao)
         {
             ProdutoId = produtoId ?? throw new ArgumentNullException(nameof(produtoId));

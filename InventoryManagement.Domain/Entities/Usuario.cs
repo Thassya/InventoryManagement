@@ -7,6 +7,7 @@ namespace InventoryManagement.Domain.Models
     public class Usuario : Entity
     {
         private readonly List<EstoqueProduto> _estoqueProdutos;
+        public IReadOnlyCollection<EstoqueProduto> Estoque => _estoqueProdutos.AsReadOnly();
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
