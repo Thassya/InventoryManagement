@@ -1,8 +1,9 @@
+using InventoryManagement.Domain.Common;
+
 namespace InventoryManagement.Domain.Models
 {
-    public class Produto
-    {
-        public int Id { get; set; }
+    public class Produto : Entity
+    {       
         public string Nome { get; set; }
         public Categoria Categoria { get; set; }
 
@@ -11,9 +12,8 @@ namespace InventoryManagement.Domain.Models
             
         }
 
-        public Produto(int id, string nome, Categoria categoria)
+        public Produto(string nome, Categoria categoria)
         {
-            Id = id;
             Nome = nome;
             Categoria = categoria;
         }

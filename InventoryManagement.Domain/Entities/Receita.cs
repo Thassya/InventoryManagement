@@ -1,10 +1,10 @@
+using InventoryManagement.Domain.Common;
 using InventoryManagement.Domain.Enums;
 
 namespace InventoryManagement.Domain.Models
 {
-    public class Receita
+    public class Receita : Entity
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Instrucoes { get; set; }
         public int IdCategoria { get; set; }
@@ -16,9 +16,8 @@ namespace InventoryManagement.Domain.Models
 
         }
 
-        public Receita(int id, string nome, string instrucoes, int idCategoria, int tempoPreparo, Dificuldade dificuldade)
+        public Receita(string nome, string instrucoes, int idCategoria, int tempoPreparo, Dificuldade dificuldade)
         {
-            Id = id;
             Nome = nome;
             Instrucoes = instrucoes;
             IdCategoria = idCategoria;
