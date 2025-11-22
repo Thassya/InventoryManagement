@@ -1,6 +1,6 @@
 using InventoryManagement.Domain.Common;
 
-namespace InventoryManagement.Domain.Models
+namespace InventoryManagement.Domain.ValueObjects
 {
     public class Categoria : ValueObject
     {
